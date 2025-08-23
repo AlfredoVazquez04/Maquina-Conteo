@@ -1,0 +1,102 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.imagen-capturada {
+  max-width: 90vw;
+  max-height: 65vh; /* límite fijo: nunca ocupa más del 65% de la pantalla */
+  border: 2px solid #333;
+  border-radius: 8px;
+  object-fit: contain; /* mantiene proporción */
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+.pantalla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* reparte espacio entre arriba y abajo */
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  overflow: hidden; /* evita scroll */
+}
+
+.imagen-procesada {
+  max-width: 90vw;
+  max-height: 55vh; /* 🔑 límite para no tapar botones */
+  border: 2px solid #333;
+  border-radius: 8px;
+  object-fit: contain;
+  margin: 10px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.texto-analisis {
+  max-height: 20vh;  /* 🔑 reserva espacio para texto */
+  overflow-y: auto;  /* scroll interno si hay mucho texto */
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 90%;
+  white-space: pre-wrap;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  flex-shrink: 0; /* nunca desaparecen */
+}
+
+
+.boton,
+.boton_analizar {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton {
+  background-color: #007bff;
+  color: white;
+}
+
+.boton:hover {
+  background-color: #0056b3;
+}
+
+.boton_analizar {
+  background-color: #28a745;
+  color: white;
+}
+
+.boton_analizar:hover {
+  background-color: #19692c;
+}
+
+/* Responsive: en pantallas pequeñas los botones apilan vertical */
+@media (max-width: 480px) {
+  .botones {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .boton,
+  .boton_analizar {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
